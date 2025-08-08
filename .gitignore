@@ -1,0 +1,9 @@
+# Ignore everything in this directory
+*
+# But not these files...
+!.gitignore
+!README.md
+
+# If you want to allow specific folders or files, uncomment and edit below:
+# !templates/
+# !app.py
