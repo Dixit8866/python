@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable Types - Python Learning Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/static/css/tailwind.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-purple-50 to-indigo-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-code text-2xl text-indigo-600 mr-2"></i>
+                    <span class="font-bold text-xl text-gray-900">Python Learning Hub</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="/" class="text-gray-700 hover:bg-gray-100 hover:text-indigo-700 px-3 py-2 rounded-md text-sm font-medium transition">Home</a>
+                        <a href="/variables" class="bg-indigo-100 text-indigo-700 px-3 py-2 rounded-md text-sm font-medium">Variables</a>
+                        <a href="/datatypes" class="text-gray-700 hover:bg-gray-100 hover:text-indigo-700 px-3 py-2 rounded-md text-sm font-medium transition">Data Types</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="flex items-center space-x-2">
+                    <li><a href="/" class="text-gray-500 hover:text-indigo-700">Home</a></li>
+                    <li><i class="fas fa-chevron-right text-gray-400"></i></li>
+                    <li><a href="/variables" class="text-gray-500 hover:text-indigo-700">Variables</a></li>
+                    <li><i class="fas fa-chevron-right text-gray-400"></i></li>
+                    <li><span class="text-indigo-600 font-medium">Variable Types</span></li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Main Content -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <!-- Header -->
+                    <div class="bg-gradient-to-r from-purple-500 to-purple-600 text-white p-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-tags text-xl"></i>
+                            </div>
+                            <div>
+                                <h1 class="text-2xl font-bold">Example 2: Variable Types</h1>
+                                <p class="text-purple-100">Discover different data types in Python</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="p-8">
+                        <div class="mb-8">
+                            <h2 class="text-xl font-semibold text-gray-900 mb-4">Python Variable Types</h2>
+                            <p class="text-gray-700 mb-4">
+                                Python automatically determines the type of a variable based on the value assigned to it. 
+                                You can use the <code class="bg-gray-100 px-2 py-1 rounded">type()</code> function to check the data type.
+                            </p>
+                        </div>
+
+                        <!-- Code Example -->
+                        <div class="mb-8">
+                            <div class="bg-gray-900 rounded-lg p-6 mb-4">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h3 class="text-white font-medium">Python Code</h3>
+                                    <button class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded text-sm transition">
+                                        <i class="fas fa-copy mr-1"></i> Copy
+                                    </button>
+                                </div>
+                                <pre class="text-green-400"><code class="language-python"># Different variable types
+a = 10          # Integer
+b = 3.14        # Float
+c = True        # Boolean
+d = "Python"    # String
+e = [1, 2, 3]   # List
+
+# Check the type of each variable
+print(f"a = {a}, type: {type(a)}")
+print(f"b = {b}, type: {type(b)}")
+print(f"c = {c}, type: {type(c)}")
+print(f"d = {d}, type: {type(d)}")
+print(f"e = {e}, type: {type(e)}")</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- Output -->
+                        <div class="mb-8">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-3">Expected Output:</h3>
+                            <div class="bg-gray-100 rounded-lg p-4 font-mono text-sm space-y-1">
+                                <div class="text-gray-700">a = 10, type: &lt;class 'int'&gt;</div>
+                                <div class="text-gray-700">b = 3.14, type: &lt;class 'float'&gt;</div>
+                                <div class="text-gray-700">c = True, type: &lt;class 'bool'&gt;</div>
+                                <div class="text-gray-700">d = Python, type: &lt;class 'str'&gt;</div>
+                                <div class="text-gray-700">e = [1, 2, 3], type: &lt;class 'list'&gt;</div>
+                            </div>
+                        </div>
+
+                        <!-- Type Cards -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                            <div class="bg-blue-50 rounded-lg p-4">
+                                <h4 class="font-semibold text-blue-900 mb-2">
+                                    <i class="fas fa-hashtag mr-2"></i>Integer (int)
+                                </h4>
+                                <p class="text-blue-800 text-sm">Whole numbers without decimal points</p>
+                                <code class="text-blue-600 text-xs">Example: 10, -5, 0</code>
+                            </div>
+                            
+                            <div class="bg-green-50 rounded-lg p-4">
+                                <h4 class="font-semibold text-green-900 mb-2">
+                                    <i class="fas fa-percentage mr-2"></i>Float
+                                </h4>
+                                <p class="text-green-800 text-sm">Numbers with decimal points</p>
+                                <code class="text-green-600 text-xs">Example: 3.14, -2.5, 0.0</code>
+                            </div>
+                            
+                            <div class="bg-red-50 rounded-lg p-4">
+                                <h4 class="font-semibold text-red-900 mb-2">
+                                    <i class="fas fa-toggle-on mr-2"></i>Boolean (bool)
+                                </h4>
+                                <p class="text-red-800 text-sm">True or False values</p>
+                                <code class="text-red-600 text-xs">Example: True, False</code>
+                            </div>
+                            
+                            <div class="bg-yellow-50 rounded-lg p-4">
+                                <h4 class="font-semibold text-yellow-900 mb-2">
+                                    <i class="fas fa-quote-right mr-2"></i>String (str)
+                                </h4>
+                                <p class="text-yellow-800 text-sm">Text data in quotes</p>
+                                <code class="text-yellow-600 text-xs">Example: "Hello", 'Python'</code>
+                            </div>
+                        </div>
+
+                        <!-- Explanation -->
+                        <div class="bg-purple-50 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-purple-900 mb-3">
+                                <i class="fas fa-lightbulb mr-2"></i>Key Points
+                            </h3>
+                            <ul class="space-y-2 text-purple-800">
+                                <li><strong>Dynamic Typing:</strong> Python automatically determines variable types</li>
+                                <li><strong>Type Checking:</strong> Use type() function to check variable types</li>
+                                <li><strong>Type Conversion:</strong> You can convert between types using int(), float(), str(), etc.</li>
+                                <li><strong>Immutable Types:</strong> int, float, bool, and str cannot be changed in place</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-xl shadow-lg p-6 sticky top-24">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Navigation</h3>
+                    <div class="space-y-3">
+                        <a href="/variables/example1" class="block">
+                            <div class="p-3 bg-gray-50 hover:bg-blue-50 rounded-lg transition">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium text-gray-700 hover:text-blue-700">Previous: Basic Assignment</span>
+                                    <i class="fas fa-arrow-left text-gray-400 hover:text-blue-600"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/datatypes" class="block group">
+                            <div class="p-3 bg-gray-50 hover:bg-green-50 rounded-lg transition">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium text-gray-700 group-hover:text-green-700">Next: Data Types</span>
+                                    <i class="fas fa-arrow-right text-gray-400 group-hover:text-green-600 group-hover:translate-x-1 transition-all"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/variables" class="block">
+                            <div class="p-3 bg-gray-50 hover:bg-purple-50 rounded-lg transition">
+                                <span class="text-sm font-medium text-gray-700 hover:text-purple-700">Back to Variables</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Quick Reference -->
+                    <div class="mt-8">
+                        <h4 class="text-md font-semibold text-gray-900 mb-3">🔍 Quick Reference</h4>
+                        <div class="text-sm text-gray-600 space-y-1">
+                            <p><code class="bg-gray-100 px-1 rounded">type(var)</code> - Check type</p>
+                            <p><code class="bg-gray-100 px-1 rounded">int()</code> - Convert to integer</p>
+                            <p><code class="bg-gray-100 px-1 rounded">str()</code> - Convert to string</p>
+                            <p><code class="bg-gray-100 px-1 rounded">float()</code> - Convert to float</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Python Learning Hub. Built with Flask & Tailwind CSS.</p>
+        </div>
+    </footer>
+</body>
+</html>

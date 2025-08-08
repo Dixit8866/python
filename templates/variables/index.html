@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables - Python Learning Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/static/css/tailwind.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-code text-2xl text-indigo-600 mr-2"></i>
+                    <span class="font-bold text-xl text-gray-900">Python Learning Hub</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="/" class="text-gray-700 hover:bg-gray-100 hover:text-indigo-700 px-3 py-2 rounded-md text-sm font-medium transition">Home</a>
+                        <a href="/variables" class="bg-indigo-100 text-indigo-700 px-3 py-2 rounded-md text-sm font-medium">Variables</a>
+                        <a href="/datatypes" class="text-gray-700 hover:bg-gray-100 hover:text-indigo-700 px-3 py-2 rounded-md text-sm font-medium transition">Data Types</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <div class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex items-center">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                    <i class="fas fa-box text-2xl text-blue-600"></i>
+                </div>
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">Variables in Python</h1>
+                    <p class="text-gray-600 mt-1">Learn how to store and work with data using variables</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Main Content -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">What are Variables?</h2>
+                    <div class="prose prose-lg text-gray-700 mb-8">
+                        <p class="mb-4">
+                            Variables are containers that store data values. In Python, you don't need to declare the type of variable 
+                            explicitly - Python automatically determines the data type based on the value you assign.
+                        </p>
+                        <p class="mb-4">
+                            Think of variables as labeled boxes where you can store different types of information that your program can use later.
+                        </p>
+                    </div>
+
+                    <!-- Key Concepts -->
+                    <div class="bg-blue-50 rounded-lg p-6 mb-8">
+                        <h3 class="text-xl font-semibold text-blue-900 mb-4">Key Concepts</h3>
+                        <ul class="space-y-2 text-blue-800">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                Variables store data that can be used throughout your program
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                Python is dynamically typed - no need to declare variable types
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                Variable names should be descriptive and follow naming conventions
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Common Errors & Solutions -->
+                    <div class="bg-red-50 rounded-lg p-6 mb-8">
+                        <h3 class="text-xl font-semibold text-red-900 mb-4">
+                            <i class="fas fa-exclamation-triangle mr-2"></i>Common Errors & How to Fix Them
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-red-400 pl-4">
+                                <h4 class="font-semibold text-red-800">NameError: name 'variable' is not defined</h4>
+                                <p class="text-red-700 text-sm mb-2">Occurs when you try to use a variable before defining it.</p>
+                                <div class="bg-red-100 p-3 rounded text-sm">
+                                    <strong>Wrong:</strong> <code>print(x)</code> # x not defined<br>
+                                    <strong>Correct:</strong> <code>x = 5; print(x)</code>
+                                </div>
+                            </div>
+                            <div class="border-l-4 border-yellow-400 pl-4">
+                                <h4 class="font-semibold text-yellow-800">Invalid variable names</h4>
+                                <p class="text-yellow-700 text-sm mb-2">Variable names must follow Python naming rules.</p>
+                                <div class="bg-yellow-100 p-3 rounded text-sm">
+                                    <strong>Wrong:</strong> <code>2var, class, my-var</code><br>
+                                    <strong>Correct:</strong> <code>var2, my_class, my_var</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-xl shadow-lg p-6 sticky top-24">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Examples by Difficulty</h3>
+                    
+                    <!-- Basic Examples -->
+                    <div class="mb-6">
+                        <h4 class="text-lg font-semibold text-green-700 mb-3">🟢 Basic Examples</h4>
+                        <div class="space-y-2">
+                            <a href="/variables/example1" class="block group">
+                                <div class="card-hover bg-gradient-to-r from-blue-500 to-blue-600 text-white p-3 rounded-lg">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <h5 class="font-semibold text-sm">Basic Assignment</h5>
+                                            <p class="text-blue-100 text-xs">Learn variable creation</p>
+                                        </div>
+                                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                                    </div>
+                                </div>
+                            </a>
+                            
+                            <a href="/variables/example2" class="block group">
+                                <div class="card-hover bg-gradient-to-r from-purple-500 to-purple-600 text-white p-3 rounded-lg">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <h5 class="font-semibold text-sm">Variable Types</h5>
+                                            <p class="text-purple-100 text-xs">Explore different types</p>
+                                        </div>
+                                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Practice Levels -->
+                    <div class="mb-6">
+                        <h4 class="text-lg font-semibold text-gray-700 mb-3">📚 Practice Levels</h4>
+                        <div class="space-y-2">
+                            <a href="/variables/easy" class="block group">
+                                <div class="card-hover bg-gradient-to-r from-green-400 to-green-500 text-white p-3 rounded-lg">
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-semibold text-sm">🟢 Easy Problems</span>
+                                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                                    </div>
+                                </div>
+                            </a>
+                            
+                            <a href="/variables/medium" class="block group">
+                                <div class="card-hover bg-gradient-to-r from-yellow-400 to-orange-500 text-white p-3 rounded-lg">
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-semibold text-sm">🟡 Medium Problems</span>
+                                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                                    </div>
+                                </div>
+                            </a>
+                            
+                            <a href="/variables/hard" class="block group">
+                                <div class="card-hover bg-gradient-to-r from-red-400 to-red-500 text-white p-3 rounded-lg">
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-semibold text-sm">🔴 Hard Problems</span>
+                                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Interview Questions -->
+                    <div>
+                        <h4 class="text-lg font-semibold text-indigo-700 mb-3">💼 Interview Prep</h4>
+                        <a href="/variables/interview" class="block group">
+                            <div class="card-hover bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-3 rounded-lg">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <h5 class="font-semibold text-sm">Interview Questions</h5>
+                                        <p class="text-indigo-100 text-xs">Theory & practical</p>
+                                    </div>
+                                    <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Python Learning Hub. Built with Flask & Tailwind CSS.</p>
+        </div>
+    </footer>
+</body>
+</html>

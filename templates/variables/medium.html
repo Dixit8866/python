@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medium Variables Problems - Python Learning Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/static/css/tailwind.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-yellow-50 to-orange-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-code text-2xl text-indigo-600 mr-2"></i>
+                    <span class="font-bold text-xl text-gray-900">Python Learning Hub</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="/" class="text-gray-700 hover:bg-gray-100 hover:text-indigo-700 px-3 py-2 rounded-md text-sm font-medium transition">Home</a>
+                        <a href="/python-intro" class="text-gray-700 hover:bg-gray-100 hover:text-indigo-700 px-3 py-2 rounded-md text-sm font-medium transition">About Python</a>
+                        <a href="/variables" class="bg-indigo-100 text-indigo-700 px-3 py-2 rounded-md text-sm font-medium">Variables</a>
+                        <a href="/datatypes" class="text-gray-700 hover:bg-gray-100 hover:text-indigo-700 px-3 py-2 rounded-md text-sm font-medium transition">Data Types</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="flex items-center space-x-2">
+                    <li><a href="/" class="text-gray-500 hover:text-indigo-700">Home</a></li>
+                    <li><i class="fas fa-chevron-right text-gray-400"></i></li>
+                    <li><a href="/variables" class="text-gray-500 hover:text-indigo-700">Variables</a></li>
+                    <li><i class="fas fa-chevron-right text-gray-400"></i></li>
+                    <li><span class="text-indigo-600 font-medium">Medium Problems</span></li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-yellow-500 to-orange-500 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex items-center">
+                <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-fire text-2xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-3xl font-bold">🟡 Medium Variables Problems</h1>
+                    <p class="text-yellow-100 mt-2">Challenge yourself with intermediate variable concepts</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <!-- Main Content -->
+            <div class="lg:col-span-3 space-y-8">
+                
+                <!-- Problem 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-yellow-500 text-white p-4">
+                        <h2 class="text-xl font-bold">Problem 1: Variable Scope & Global/Local</h2>
+                        <p class="text-yellow-100">Understanding variable scope and the global keyword</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Task:</h3>
+                            <p class="text-gray-700 mb-4">
+                                Create a program that demonstrates the difference between global and local variables, 
+                                and shows how to modify global variables inside functions.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-gray-900 rounded-lg p-4 mb-4">
+                            <h4 class="text-white font-medium mb-2">Solution:</h4>
+                            <pre class="text-green-400 text-sm"><code># Global variables
+counter = 0
+user_name = "Admin"
+
+def modify_counter():
+    global counter
+    counter += 1
+    print(f"Inside function: counter = {counter}")
+
+def create_local_variable():
+    # Local variable with same name as global
+    counter = 100
+    user_name = "Local User"
+    print(f"Local counter: {counter}")
+    print(f"Local user_name: {user_name}")
+
+def access_global():
+    # Accessing global variables without modification
+    print(f"Global counter (read-only): {counter}")
+    print(f"Global user_name (read-only): {user_name}")
+
+# Demonstrate variable scope
+print("=== Initial State ===")
+print(f"Global counter: {counter}")
+print(f"Global user_name: {user_name}")
+
+print("\n=== Modifying Global Variable ===")
+modify_counter()
+modify_counter()
+print(f"Global counter after modification: {counter}")
+
+print("\n=== Local Variables ===")
+create_local_variable()
+print(f"Global counter unchanged: {counter}")
+print(f"Global user_name unchanged: {user_name}")
+
+print("\n=== Accessing Global Variables ===")
+access_global()
+
+# Common error demonstration
+print("\n=== Error Handling ===")
+def error_example():
+    try:
+        # This will cause UnboundLocalError if we try to modify
+        # a global variable without declaring it global
+        print(f"Trying to access: {counter}")
+        # counter += 1  # Uncomment this line to see the error
+    except UnboundLocalError as e:
+        print(f"Error: {e}")
+
+error_example()</code></pre>
+                        </div>
+                        
+                        <div class="bg-yellow-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-yellow-900 mb-2">Expected Output:</h4>
+                            <div class="font-mono text-sm text-yellow-800">
+                                === Initial State ===<br>
+                                Global counter: 0<br>
+                                Global user_name: Admin<br><br>
+                                === Modifying Global Variable ===<br>
+                                Inside function: counter = 1<br>
+                                Inside function: counter = 2<br>
+                                Global counter after modification: 2<br><br>
+                                === Local Variables ===<br>
+                                Local counter: 100<br>
+                                Local user_name: Local User<br>
+                                Global counter unchanged: 2<br>
+                                Global user_name unchanged: Admin<br><br>
+                                === Accessing Global Variables ===<br>
+                                Global counter (read-only): 2<br>
+                                Global user_name (read-only): Admin
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Problem 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-yellow-500 text-white p-4">
+                        <h2 class="text-xl font-bold">Problem 2: Dynamic Variable Creation</h2>
+                        <p class="text-yellow-100">Create variables dynamically using user input</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Task:</h3>
+                            <p class="text-gray-700 mb-4">
+                                Create a program that dynamically creates variables based on user input and stores them in a dictionary.
+                                Allow users to set, get, and list all stored variables.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-gray-900 rounded-lg p-4 mb-4">
+                            <h4 class="text-white font-medium mb-2">Solution:</h4>
+                            <pre class="text-green-400 text-sm"><code># Dynamic variable storage system
+class VariableManager:
+    def __init__(self):
+        self.variables = {}
+    
+    def set_variable(self, name, value):
+        """Set a variable with automatic type detection"""
+        # Try to convert to appropriate type
+        if value.isdigit():
+            self.variables[name] = int(value)
+        elif value.replace('.', '').isdigit():
+            self.variables[name] = float(value)
+        elif value.lower() in ['true', 'false']:
+            self.variables[name] = value.lower() == 'true'
+        else:
+            self.variables[name] = value
+        
+        print(f"Variable '{name}' set to {self.variables[name]} (type: {type(self.variables[name]).__name__})")
+    
+    def get_variable(self, name):
+        """Get a variable value"""
+        if name in self.variables:
+            return self.variables[name]
+        else:
+            return f"Variable '{name}' not found"
+    
+    def list_variables(self):
+        """List all variables"""
+        if not self.variables:
+            print("No variables stored")
+            return
+        
+        print("Stored Variables:")
+        for name, value in self.variables.items():
+            print(f"  {name} = {value} (type: {type(value).__name__})")
+    
+    def delete_variable(self, name):
+        """Delete a variable"""
+        if name in self.variables:
+            del self.variables[name]
+            print(f"Variable '{name}' deleted")
+        else:
+            print(f"Variable '{name}' not found")
+
+# Demonstration
+vm = VariableManager()
+
+# Simulate user inputs
+test_inputs = [
+    ("name", "John Doe"),
+    ("age", "25"),
+    ("height", "5.9"),
+    ("is_student", "true"),
+    ("score", "87.5"),
+    ("active", "false")
+]
+
+print("=== Setting Variables ===")
+for var_name, var_value in test_inputs:
+    vm.set_variable(var_name, var_value)
+
+print("\n=== Listing All Variables ===")
+vm.list_variables()
+
+print("\n=== Getting Individual Variables ===")
+for var_name, _ in test_inputs:
+    result = vm.get_variable(var_name)
+    print(f"{var_name}: {result}")
+
+print("\n=== Testing Variable Operations ===")
+# Calculate BMI using stored variables
+age = vm.get_variable("age")
+height = vm.get_variable("height")
+print(f"Person is {age} years old and {height} feet tall")
+
+print("\n=== Error Handling ===")
+print(vm.get_variable("nonexistent_var"))
+
+print("\n=== Deleting Variables ===")
+vm.delete_variable("score")
+vm.list_variables()</code></pre>
+                        </div>
+                        
+                        <div class="bg-yellow-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-yellow-900 mb-2">Key Concepts:</h4>
+                            <ul class="space-y-1 text-yellow-800 text-sm">
+                                <li>• Dynamic variable creation using dictionaries</li>
+                                <li>• Automatic type detection and conversion</li>
+                                <li>• Variable management (CRUD operations)</li>
+                                <li>• Error handling for missing variables</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Problem 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-yellow-500 text-white p-4">
+                        <h2 class="text-xl font-bold">Problem 3: Variable References & Memory</h2>
+                        <p class="text-yellow-100">Understanding how Python handles variable references</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Task:</h3>
+                            <p class="text-gray-700 mb-4">
+                                Demonstrate the difference between mutable and immutable objects, 
+                                and how variable assignment affects memory references.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-gray-900 rounded-lg p-4 mb-4">
+                            <h4 class="text-white font-medium mb-2">Solution:</h4>
+                            <pre class="text-green-400 text-sm"><code># Understanding variable references and memory
+import copy
+
+print("=== Immutable Objects (int, str, tuple) ===")
+# Integers
+a = 10
+b = a
+print(f"a = {a}, b = {b}")
+print(f"id(a) = {id(a)}, id(b) = {id(b)}")
+print(f"a is b: {a is b}")
+
+# Modifying one variable
+a = 20
+print(f"\nAfter a = 20:")
+print(f"a = {a}, b = {b}")
+print(f"id(a) = {id(a)}, id(b) = {id(b)}")
+print(f"a is b: {a is b}")
+
+print("\n=== Mutable Objects (list, dict) ===")
+# Lists
+list1 = [1, 2, 3]
+list2 = list1  # This creates a reference, not a copy!
+print(f"list1 = {list1}, list2 = {list2}")
+print(f"id(list1) = {id(list1)}, id(list2) = {id(list2)}")
+print(f"list1 is list2: {list1 is list2}")
+
+# Modifying one list affects both
+list1.append(4)
+print(f"\nAfter list1.append(4):")
+print(f"list1 = {list1}, list2 = {list2}")
+print("Both lists changed because they reference the same object!")
+
+print("\n=== Copying Solutions ===")
+# Shallow copy
+original = [1, 2, [3, 4]]
+shallow = copy.copy(original)
+deep = copy.deepcopy(original)
+
+print(f"Original: {original}")
+print(f"Shallow copy: {shallow}")
+print(f"Deep copy: {deep}")
+
+# Modify nested list
+original[2].append(5)
+print(f"\nAfter modifying nested list in original:")
+print(f"Original: {original}")
+print(f"Shallow copy: {shallow}")  # Affected because nested list is shared
+print(f"Deep copy: {deep}")        # Unaffected
+
+print("\n=== Dictionary References ===")
+person1 = {"name": "Alice", "age": 25}
+person2 = person1
+person3 = person1.copy()  # Shallow copy
+
+print(f"person1: {person1}")
+print(f"person2: {person2}")
+print(f"person3: {person3}")
+
+person1["age"] = 26
+print(f"\nAfter person1['age'] = 26:")
+print(f"person1: {person1}")
+print(f"person2: {person2}")  # Changed (reference)
+print(f"person3: {person3}")  # Unchanged (copy)
+
+print("\n=== Practical Applications ===")
+def modify_list(lst):
+    """Function that modifies the original list"""
+    lst.append("modified")
+    return lst
+
+def create_new_list(lst):
+    """Function that creates a new list"""
+    new_lst = lst.copy()
+    new_lst.append("new")
+    return new_lst
+
+test_list = [1, 2, 3]
+print(f"Original list: {test_list}")
+
+result1 = modify_list(test_list)
+print(f"After modify_list: {test_list}")  # Original is modified
+
+result2 = create_new_list(test_list)
+print(f"After create_new_list: {test_list}")  # Original unchanged
+print(f"New list: {result2}")</code></pre>
+                        </div>
+                        
+                        <div class="bg-red-50 rounded-lg p-4 mb-4">
+                            <h4 class="font-semibold text-red-900 mb-2">🚨 Common Pitfalls:</h4>
+                            <ul class="space-y-1 text-red-800 text-sm">
+                                <li>• Assigning mutable objects creates references, not copies</li>
+                                <li>• Modifying one reference affects all references to the same object</li>
+                                <li>• Use .copy() for shallow copies, copy.deepcopy() for deep copies</li>
+                                <li>• Functions can modify mutable arguments passed to them</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-xl shadow-lg p-6 sticky top-24">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Practice Navigation</h3>
+                    
+                    <div class="space-y-3 mb-6">
+                        <a href="/variables/easy" class="block text-green-700 hover:bg-green-50 px-3 py-2 rounded-lg transition">
+                            🟢 Easy Problems
+                        </a>
+                        <div class="bg-yellow-100 text-yellow-800 px-3 py-2 rounded-lg font-medium">
+                            🟡 Medium (Current)
+                        </div>
+                        <a href="/variables/hard" class="block text-red-700 hover:bg-red-50 px-3 py-2 rounded-lg transition">
+                            🔴 Hard Problems
+                        </a>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-gray-900 mb-2">🧠 Skills Developed</h4>
+                        <ul class="space-y-1 text-sm text-gray-600">
+                            <li>• Variable scope understanding</li>
+                            <li>• Memory management concepts</li>
+                            <li>• Reference vs. value semantics</li>
+                            <li>• Dynamic variable creation</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-yellow-50 rounded-lg p-4">
+                        <h4 class="font-semibold text-yellow-900 mb-2">⚠️ Important Notes</h4>
+                        <p class="text-yellow-800 text-sm">
+                            These concepts are crucial for avoiding bugs in larger programs. 
+                            Understanding references vs. copies will save you hours of debugging!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Python Learning Hub. Built with Flask & Tailwind CSS.</p>
+        </div>
+    </footer>
+</body>
+</html>

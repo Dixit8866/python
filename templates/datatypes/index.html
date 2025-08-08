@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Types - Python Learning Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/static/css/tailwind.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-green-50 to-emerald-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-code text-2xl text-indigo-600 mr-2"></i>
+                    <span class="font-bold text-xl text-gray-900">Python Learning Hub</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="/" class="text-gray-700 hover:bg-gray-100 hover:text-indigo-700 px-3 py-2 rounded-md text-sm font-medium transition">Home</a>
+                        <a href="/variables" class="text-gray-700 hover:bg-gray-100 hover:text-indigo-700 px-3 py-2 rounded-md text-sm font-medium transition">Variables</a>
+                        <a href="/datatypes" class="bg-indigo-100 text-indigo-700 px-3 py-2 rounded-md text-sm font-medium">Data Types</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <div class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex items-center">
+                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                    <i class="fas fa-database text-2xl text-green-600"></i>
+                </div>
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">Data Types in Python</h1>
+                    <p class="text-gray-600 mt-1">Explore the fundamental data types used in Python programming</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Main Content -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Understanding Python Data Types</h2>
+                    <div class="prose prose-lg text-gray-700 mb-8">
+                        <p class="mb-4">
+                            Data types define the kind of data that can be stored and manipulated within a program. 
+                            Python has several built-in data types that handle different kinds of data efficiently.
+                        </p>
+                        <p class="mb-4">
+                            Python's data types are dynamic, meaning you don't need to explicitly declare the type of a variable. 
+                            The interpreter automatically infers the type based on the value assigned.
+                        </p>
+                    </div>
+
+                    <!-- Data Type Categories -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-blue-50 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-blue-900 mb-3">
+                                <i class="fas fa-calculator mr-2"></i>Numeric Types
+                            </h3>
+                            <ul class="space-y-2 text-blue-800">
+                                <li><strong>int:</strong> Whole numbers</li>
+                                <li><strong>float:</strong> Decimal numbers</li>
+                                <li><strong>complex:</strong> Complex numbers</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-green-50 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-green-900 mb-3">
+                                <i class="fas fa-font mr-2"></i>Text Type
+                            </h3>
+                            <ul class="space-y-2 text-green-800">
+                                <li><strong>str:</strong> Text and characters</li>
+                                <li>Enclosed in quotes</li>
+                                <li>Supports Unicode</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-purple-50 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-purple-900 mb-3">
+                                <i class="fas fa-list mr-2"></i>Sequence Types
+                            </h3>
+                            <ul class="space-y-2 text-purple-800">
+                                <li><strong>list:</strong> Ordered, mutable</li>
+                                <li><strong>tuple:</strong> Ordered, immutable</li>
+                                <li><strong>range:</strong> Number sequences</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-red-50 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-red-900 mb-3">
+                                <i class="fas fa-toggle-on mr-2"></i>Boolean Type
+                            </h3>
+                            <ul class="space-y-2 text-red-800">
+                                <li><strong>bool:</strong> True or False</li>
+                                <li>Used for logical operations</li>
+                                <li>Result of comparisons</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Key Points -->
+                    <div class="bg-green-50 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-green-900 mb-4">Key Concepts</h3>
+                        <ul class="space-y-2 text-green-800">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                                Python automatically determines data types (dynamic typing)
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                                Use type() function to check the data type of any variable
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                                Data types can be converted using built-in functions
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                                Choose the right data type for efficient memory usage
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-xl shadow-lg p-6 sticky top-24">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Examples</h3>
+                    <div class="space-y-4">
+                        <a href="/datatypes/example1" class="block group">
+                            <div class="card-hover bg-gradient-to-r from-blue-500 to-blue-600 text-white p-4 rounded-lg">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <h4 class="font-semibold">Numeric Types</h4>
+                                        <p class="text-blue-100 text-sm">Integers and floats</p>
+                                    </div>
+                                    <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                                </div>
+                            </div>
+                        </a>
+                        
+                        <a href="/datatypes/example2" class="block group">
+                            <div class="card-hover bg-gradient-to-r from-green-500 to-green-600 text-white p-4 rounded-lg">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <h4 class="font-semibold">String Operations</h4>
+                                        <p class="text-green-100 text-sm">Working with text</p>
+                                    </div>
+                                    <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Quick Reference -->
+                    <div class="mt-8">
+                        <h4 class="text-md font-semibold text-gray-900 mb-3">🔍 Quick Reference</h4>
+                        <div class="text-sm text-gray-600 space-y-1">
+                            <p><code class="bg-gray-100 px-1 rounded">type(x)</code> - Check type</p>
+                            <p><code class="bg-gray-100 px-1 rounded">isinstance(x, int)</code> - Check if int</p>
+                            <p><code class="bg-gray-100 px-1 rounded">int(x)</code> - Convert to int</p>
+                            <p><code class="bg-gray-100 px-1 rounded">str(x)</code> - Convert to string</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Python Learning Hub. Built with Flask & Tailwind CSS.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hard Variables Problems - Python Learning Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/static/css/tailwind.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-red-50 to-pink-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-code text-2xl text-indigo-600 mr-2"></i>
+                    <span class="font-bold text-xl text-gray-900">Python Learning Hub</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="/" class="text-gray-700 hover:bg-gray-100 hover:text-indigo-700 px-3 py-2 rounded-md text-sm font-medium transition">Home</a>
+                        <a href="/python-intro" class="text-gray-700 hover:bg-gray-100 hover:text-indigo-700 px-3 py-2 rounded-md text-sm font-medium transition">About Python</a>
+                        <a href="/variables" class="bg-indigo-100 text-indigo-700 px-3 py-2 rounded-md text-sm font-medium">Variables</a>
+                        <a href="/datatypes" class="text-gray-700 hover:bg-gray-100 hover:text-indigo-700 px-3 py-2 rounded-md text-sm font-medium transition">Data Types</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-red-500 to-pink-500 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex items-center">
+                <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-bolt text-2xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-3xl font-bold">🔴 Hard Variables Problems</h1>
+                    <p class="text-red-100 mt-2">Advanced concepts for experienced programmers</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <!-- Main Content -->
+            <div class="lg:col-span-3 space-y-8">
+                
+                <!-- Problem 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-red-500 text-white p-4">
+                        <h2 class="text-xl font-bold">Problem 1: Variable Metaclass & Descriptors</h2>
+                        <p class="text-red-100">Advanced variable behavior using Python descriptors</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Task:</h3>
+                            <p class="text-gray-700 mb-4">
+                                Create a smart variable system using descriptors that automatically validates, 
+                                logs changes, and maintains history of all modifications.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-gray-900 rounded-lg p-4 mb-4">
+                            <h4 class="text-white font-medium mb-2">Solution:</h4>
+                            <pre class="text-green-400 text-sm"><code>import time
+from typing import Any, List, Callable
+
+class SmartVariable:
+    """Descriptor that provides advanced variable functionality"""
+    
+    def __init__(self, initial_value=None, validator=None, name=None):
+        self.name = name or "SmartVariable"
+        self.validator = validator
+        self._history = []
+        self._watchers = []
+        self._initial_value = initial_value
+        self._value = None
+        
+        if initial_value is not None:
+            self._set_value(initial_value, "initialization")
+    
+    def __set_name__(self, owner, name):
+        self.name = name
+    
+    def __get__(self, instance, owner):
+        if instance is None:
+            return self
+        return self._value
+    
+    def __set__(self, instance, value):
+        self._set_value(value, "assignment")
+    
+    def _set_value(self, value, operation_type):
+        # Validate the new value
+        if self.validator and not self.validator(value):
+            raise ValueError(f"Invalid value for {self.name}: {value}")
+        
+        old_value = self._value
+        self._value = value
+        
+        # Record in history
+        timestamp = time.time()
+        self._history.append({
+            'timestamp': timestamp,
+            'old_value': old_value,
+            'new_value': value,
+            'operation': operation_type
+        })
+        
+        # Notify watchers
+        for watcher in self._watchers:
+            watcher(self.name, old_value, value)
+    
+    def add_watcher(self, callback: Callable):
+        """Add a callback function that gets called when value changes"""
+        self._watchers.append(callback)
+    
+    def get_history(self) -> List[dict]:
+        """Get the complete history of value changes"""
+        return self._history.copy()
+    
+    def reset_to_initial(self):
+        """Reset to the initial value"""
+        if self._initial_value is not None:
+            self._set_value(self._initial_value, "reset")
+    
+    def rollback(self, steps=1):
+        """Rollback to a previous value"""
+        if len(self._history) > steps:
+            target_entry = self._history[-(steps + 1)]
+            self._set_value(target_entry['new_value'], "rollback")
+
+class Person:
+    """Example class using SmartVariable descriptors"""
+    
+    # Validator functions
+    @staticmethod
+    def validate_age(value):
+        return isinstance(value, int) and 0 <= value <= 150
+    
+    @staticmethod
+    def validate_name(value):
+        return isinstance(value, str) and len(value.strip()) > 0
+    
+    # Smart variables with validation
+    age = SmartVariable(0, validate_age)
+    name = SmartVariable("", validate_name)
+    salary = SmartVariable(0, lambda x: isinstance(x, (int, float)) and x >= 0)
+    
+    def __init__(self, name, age, salary=0):
+        # Add watchers for logging
+        self.age.add_watcher(self._log_change)
+        self.name.add_watcher(self._log_change)
+        self.salary.add_watcher(self._log_change)
+        
+        # Set initial values
+        self.name = name
+        self.age = age
+        self.salary = salary
+    
+    def _log_change(self, var_name, old_value, new_value):
+        print(f"🔄 {var_name} changed: {old_value} → {new_value}")
+    
+    def get_variable_history(self, var_name):
+        """Get history for a specific variable"""
+        descriptor = getattr(type(self), var_name)
+        return descriptor.get_history()
+    
+    def print_all_histories(self):
+        """Print history for all variables"""
+        for var_name in ['name', 'age', 'salary']:
+            print(f"\n📊 History for {var_name}:")
+            history = self.get_variable_history(var_name)
+            for i, entry in enumerate(history):
+                timestamp = time.strftime('%H:%M:%S', time.localtime(entry['timestamp']))
+                print(f"  {i+1}. [{timestamp}] {entry['operation']}: "
+                      f"{entry['old_value']} → {entry['new_value']}")
+
+# Demonstration
+print("=== Smart Variable System Demo ===")
+
+# Create person with validation
+person = Person("Alice", 25, 50000)
+
+print("\n=== Testing Validation ===")
+try:
+    person.age = -5  # Invalid age
+except ValueError as e:
+    print(f"❌ Validation error: {e}")
+
+try:
+    person.name = ""  # Invalid name
+except ValueError as e:
+    print(f"❌ Validation error: {e}")
+
+print("\n=== Valid Updates ===")
+person.age = 26
+person.salary = 55000
+person.name = "Alice Smith"
+
+print("\n=== Rollback Demo ===")
+print(f"Current age: {person.age}")
+person.age.rollback(2)  # Go back 2 steps
+print(f"After rollback: {person.age}")
+
+print("\n=== Reset Demo ===")
+person.age.reset_to_initial()
+print(f"After reset: {person.age}")
+
+print("\n=== Complete History ===")
+person.print_all_histories()</code></pre>
+                        </div>
+                        
+                        <div class="bg-red-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-red-900 mb-2">Advanced Concepts:</h4>
+                            <ul class="space-y-1 text-red-800 text-sm">
+                                <li>• Python descriptors (__get__, __set__, __set_name__)</li>
+                                <li>• Automatic validation with custom validators</li>
+                                <li>• Change tracking and history management</li>
+                                <li>• Observer pattern with watchers</li>
+                                <li>• Rollback and reset functionality</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Problem 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-red-500 text-white p-4">
+                        <h2 class="text-xl font-bold">Problem 2: Memory-Optimized Variable Pool</h2>
+                        <p class="text-red-100">Implement a memory-efficient variable management system</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Task:</h3>
+                            <p class="text-gray-700 mb-4">
+                                Create a variable pool system that manages memory efficiently, 
+                                implements lazy loading, caching, and automatic garbage collection.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-gray-900 rounded-lg p-4 mb-4">
+                            <h4 class="text-white font-medium mb-2">Solution:</h4>
+                            <pre class="text-green-400 text-sm"><code>import weakref
+import gc
+from typing import Any, Dict, Optional, Callable
+from threading import Lock
+import sys
+
+class VariablePool:
+    """Memory-optimized variable pool with advanced features"""
+    
+    def __init__(self, max_size=1000, enable_caching=True):
+        self._pool: Dict[str, Any] = {}
+        self._cache: Dict[str, Any] = {}
+        self._lazy_loaders: Dict[str, Callable] = {}
+        self._access_count: Dict[str, int] = {}
+        self._weak_references: Dict[str, weakref.ref] = {}
+        self._max_size = max_size
+        self._enable_caching = enable_caching
+        self._lock = Lock()
+    
+    def register_lazy_loader(self, name: str, loader: Callable):
+        """Register a lazy loader for a variable"""
+        with self._lock:
+            self._lazy_loaders[name] = loader
+            self._access_count[name] = 0
+    
+    def set_variable(self, name: str, value: Any, use_weak_ref=False):
+        """Set a variable in the pool"""
+        with self._lock:
+            if len(self._pool) >= self._max_size:
+                self._evict_least_used()
+            
+            if use_weak_ref and hasattr(value, '__weakref__'):
+                # Use weak reference for objects that support it
+                def cleanup_callback(ref):
+                    if name in self._weak_references:
+                        del self._weak_references[name]
+                        print(f"🗑️  Weak reference for '{name}' cleaned up")
+                
+                self._weak_references[name] = weakref.ref(value, cleanup_callback)
+            else:
+                self._pool[name] = value
+            
+            self._access_count[name] = 0
+            
+            # Cache frequently accessed items
+            if self._enable_caching:
+                self._cache[name] = value
+    
+    def get_variable(self, name: str, default=None) -> Any:
+        """Get a variable from the pool with lazy loading support"""
+        with self._lock:
+            # Increment access count
+            self._access_count[name] = self._access_count.get(name, 0) + 1
+            
+            # Check cache first
+            if self._enable_caching and name in self._cache:
+                return self._cache[name]
+            
+            # Check weak references
+            if name in self._weak_references:
+                value = self._weak_references[name]()
+                if value is not None:
+                    if self._enable_caching:
+                        self._cache[name] = value
+                    return value
+                else:
+                    # Weak reference is dead, remove it
+                    del self._weak_references[name]
+            
+            # Check main pool
+            if name in self._pool:
+                value = self._pool[name]
+                if self._enable_caching:
+                    self._cache[name] = value
+                return value
+            
+            # Try lazy loading
+            if name in self._lazy_loaders:
+                print(f"🔄 Lazy loading '{name}'...")
+                value = self._lazy_loaders[name]()
+                self.set_variable(name, value)
+                return value
+            
+            return default
+    
+    def _evict_least_used(self):
+        """Remove the least frequently used variable"""
+        if not self._access_count:
+            return
+        
+        least_used = min(self._access_count.items(), key=lambda x: x[1])
+        var_name = least_used[0]
+        
+        print(f"🚮 Evicting least used variable: '{var_name}' (accessed {least_used[1]} times)")
+        
+        # Remove from all storage locations
+        self._pool.pop(var_name, None)
+        self._cache.pop(var_name, None)
+        self._weak_references.pop(var_name, None)
+        del self._access_count[var_name]
+    
+    def memory_stats(self):
+        """Get detailed memory statistics"""
+        pool_size = sum(sys.getsizeof(v) for v in self._pool.values())
+        cache_size = sum(sys.getsizeof(v) for v in self._cache.values())
+        
+        return {
+            'total_variables': len(self._pool) + len(self._weak_references),
+            'pool_variables': len(self._pool),
+            'weak_references': len(self._weak_references),
+            'cached_variables': len(self._cache),
+            'lazy_loaders': len(self._lazy_loaders),
+            'pool_memory_bytes': pool_size,
+            'cache_memory_bytes': cache_size,
+            'total_memory_bytes': pool_size + cache_size
+        }
+    
+    def force_garbage_collection(self):
+        """Force garbage collection and clean up dead references"""
+        collected = gc.collect()
+        
+        # Clean up dead weak references
+        dead_refs = []
+        for name, ref in self._weak_references.items():
+            if ref() is None:
+                dead_refs.append(name)
+        
+        for name in dead_refs:
+            del self._weak_references[name]
+            self._access_count.pop(name, None)
+        
+        print(f"🧹 Garbage collection: {collected} objects collected, {len(dead_refs)} dead references cleaned")
+        return collected, len(dead_refs)
+    
+    def get_access_statistics(self):
+        """Get variable access statistics"""
+        return sorted(self._access_count.items(), key=lambda x: x[1], reverse=True)
+
+# Advanced usage demonstration
+class LargeDataObject:
+    """Simulate a large object that benefits from weak references"""
+    def __init__(self, size_mb=10):
+        self.data = bytearray(size_mb * 1024 * 1024)  # Allocate memory
+        self.creation_time = time.time()
+    
+    def __del__(self):
+        print(f"🗑️  LargeDataObject deleted (freed ~{len(self.data)} bytes)")
+
+# Demo the system
+print("=== Memory-Optimized Variable Pool Demo ===")
+
+pool = VariablePool(max_size=5)
+
+# Register lazy loaders
+pool.register_lazy_loader("expensive_data", lambda: [i**2 for i in range(10000)])
+pool.register_lazy_loader("large_object", lambda: LargeDataObject(5))
+
+# Set some regular variables
+pool.set_variable("config", {"debug": True, "version": "1.0"})
+pool.set_variable("user_data", {"name": "John", "preferences": {}})
+
+# Create large object with weak reference
+large_obj = LargeDataObject(2)
+pool.set_variable("large_obj", large_obj, use_weak_ref=True)
+
+print("\n=== Memory Statistics ===")
+stats = pool.memory_stats()
+for key, value in stats.items():
+    print(f"{key}: {value}")
+
+print("\n=== Testing Lazy Loading ===")
+expensive_data = pool.get_variable("expensive_data")
+print(f"Loaded expensive data: {len(expensive_data)} items")
+
+print("\n=== Access Statistics ===")
+access_stats = pool.get_access_statistics()
+for var_name, count in access_stats:
+    print(f"{var_name}: accessed {count} times")
+
+print("\n=== Testing Memory Management ===")
+# Fill pool to trigger eviction
+for i in range(10):
+    pool.set_variable(f"temp_var_{i}", list(range(1000)))
+
+print("\n=== Final Memory Statistics ===")
+stats = pool.memory_stats()
+for key, value in stats.items():
+    print(f"{key}: {value}")
+
+# Clean up
+del large_obj  # This should trigger weak reference cleanup
+pool.force_garbage_collection()</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-xl shadow-lg p-6 sticky top-24">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Practice Navigation</h3>
+                    
+                    <div class="space-y-3 mb-6">
+                        <a href="/variables/easy" class="block text-green-700 hover:bg-green-50 px-3 py-2 rounded-lg transition">
+                            🟢 Easy Problems
+                        </a>
+                        <a href="/variables/medium" class="block text-yellow-700 hover:bg-yellow-50 px-3 py-2 rounded-lg transition">
+                            🟡 Medium Problems
+                        </a>
+                        <div class="bg-red-100 text-red-800 px-3 py-2 rounded-lg font-medium">
+                            🔴 Hard (Current)
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-gray-900 mb-2">🎯 Advanced Skills</h4>
+                        <ul class="space-y-1 text-sm text-gray-600">
+                            <li>• Python descriptors</li>
+                            <li>• Memory management</li>
+                            <li>• Weak references</li>
+                            <li>• Design patterns</li>
+                            <li>• Performance optimization</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-red-50 rounded-lg p-4">
+                        <h4 class="font-semibold text-red-900 mb-2">⚡ Pro Tips</h4>
+                        <p class="text-red-800 text-sm">
+                            These concepts are used in frameworks like Django, SQLAlchemy, and other professional Python libraries. 
+                            Master these for senior-level positions!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Python Learning Hub. Built with Flask & Tailwind CSS.</p>
+        </div>
+    </footer>
+</body>
+</html>

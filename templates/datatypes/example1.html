@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeric Types - Python Learning Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/static/css/tailwind.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-cyan-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-code text-2xl text-indigo-600 mr-2"></i>
+                    <span class="font-bold text-xl text-gray-900">Python Learning Hub</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="/" class="text-gray-700 hover:bg-gray-100 hover:text-indigo-700 px-3 py-2 rounded-md text-sm font-medium transition">Home</a>
+                        <a href="/variables" class="text-gray-700 hover:bg-gray-100 hover:text-indigo-700 px-3 py-2 rounded-md text-sm font-medium transition">Variables</a>
+                        <a href="/datatypes" class="bg-indigo-100 text-indigo-700 px-3 py-2 rounded-md text-sm font-medium">Data Types</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="flex items-center space-x-2">
+                    <li><a href="/" class="text-gray-500 hover:text-indigo-700">Home</a></li>
+                    <li><i class="fas fa-chevron-right text-gray-400"></i></li>
+                    <li><a href="/datatypes" class="text-gray-500 hover:text-indigo-700">Data Types</a></li>
+                    <li><i class="fas fa-chevron-right text-gray-400"></i></li>
+                    <li><span class="text-indigo-600 font-medium">Numeric Types</span></li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Main Content -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <!-- Header -->
+                    <div class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white p-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-calculator text-xl"></i>
+                            </div>
+                            <div>
+                                <h1 class="text-2xl font-bold">Example 1: Numeric Types</h1>
+                                <p class="text-blue-100">Working with integers and floating-point numbers</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="p-8">
+                        <div class="mb-8">
+                            <h2 class="text-xl font-semibold text-gray-900 mb-4">Understanding Numeric Data Types</h2>
+                            <p class="text-gray-700 mb-4">
+                                Python supports several numeric data types. The most commonly used are integers (int) and 
+                                floating-point numbers (float). Python automatically handles the precision and memory allocation.
+                            </p>
+                        </div>
+
+                        <!-- Code Example -->
+                        <div class="mb-8">
+                            <div class="bg-gray-900 rounded-lg p-6 mb-4">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h3 class="text-white font-medium">Python Code</h3>
+                                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm transition">
+                                        <i class="fas fa-copy mr-1"></i> Copy
+                                    </button>
+                                </div>
+                                <pre class="text-green-400"><code class="language-python"># Integer examples
+age = 25
+population = 1000000
+negative_num = -42
+
+# Float examples  
+price = 19.99
+temperature = -5.5
+pi = 3.14159
+
+# Check types and perform operations
+print(f"age: {age}, type: {type(age)}")
+print(f"price: {price}, type: {type(price)}")
+
+# Mathematical operations
+total = age + 5
+discount = price * 0.1
+area = pi * (5 ** 2)  # π * r²
+
+print(f"Total: {total}")
+print(f"Discount: ${discount:.2f}")
+print(f"Area: {area:.2f}")
+
+# Type conversion
+age_as_float = float(age)
+price_as_int = int(price)
+
+print(f"Age as float: {age_as_float}")
+print(f"Price as int: {price_as_int}")</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- Output -->
+                        <div class="mb-8">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-3">Expected Output:</h3>
+                            <div class="bg-gray-100 rounded-lg p-4 font-mono text-sm space-y-1">
+                                <div class="text-gray-700">age: 25, type: &lt;class 'int'&gt;</div>
+                                <div class="text-gray-700">price: 19.99, type: &lt;class 'float'&gt;</div>
+                                <div class="text-gray-700">Total: 30</div>
+                                <div class="text-gray-700">Discount: $2.00</div>
+                                <div class="text-gray-700">Area: 78.54</div>
+                                <div class="text-gray-700">Age as float: 25.0</div>
+                                <div class="text-gray-700">Price as int: 19</div>
+                            </div>
+                        </div>
+
+                        <!-- Numeric Operations -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                            <div class="bg-blue-50 rounded-lg p-6">
+                                <h4 class="font-semibold text-blue-900 mb-3">
+                                    <i class="fas fa-plus mr-2"></i>Basic Operations
+                                </h4>
+                                <div class="space-y-2 text-blue-800 text-sm">
+                                    <p><code class="bg-blue-200 px-2 py-1 rounded">+</code> Addition</p>
+                                    <p><code class="bg-blue-200 px-2 py-1 rounded">-</code> Subtraction</p>
+                                    <p><code class="bg-blue-200 px-2 py-1 rounded">*</code> Multiplication</p>
+                                    <p><code class="bg-blue-200 px-2 py-1 rounded">/</code> Division</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-cyan-50 rounded-lg p-6">
+                                <h4 class="font-semibold text-cyan-900 mb-3">
+                                    <i class="fas fa-superscript mr-2"></i>Advanced Operations
+                                </h4>
+                                <div class="space-y-2 text-cyan-800 text-sm">
+                                    <p><code class="bg-cyan-200 px-2 py-1 rounded">**</code> Exponentiation</p>
+                                    <p><code class="bg-cyan-200 px-2 py-1 rounded">//</code> Floor division</p>
+                                    <p><code class="bg-cyan-200 px-2 py-1 rounded">%</code> Modulus</p>
+                                    <p><code class="bg-cyan-200 px-2 py-1 rounded">abs()</code> Absolute value</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Explanation -->
+                        <div class="bg-blue-50 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-blue-900 mb-3">
+                                <i class="fas fa-lightbulb mr-2"></i>Key Points
+                            </h3>
+                            <ul class="space-y-2 text-blue-800">
+                                <li><strong>Integers:</strong> Whole numbers without decimal points (unlimited precision)</li>
+                                <li><strong>Floats:</strong> Numbers with decimal points (64-bit precision)</li>
+                                <li><strong>Type Conversion:</strong> Use int() and float() to convert between types</li>
+                                <li><strong>Precision:</strong> Be careful with float precision in calculations</li>
+                                <li><strong>Operations:</strong> Mix int and float - result is usually float</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-xl shadow-lg p-6 sticky top-24">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Navigation</h3>
+                    <div class="space-y-3">
+                        <a href="/datatypes/example2" class="block group">
+                            <div class="p-3 bg-gray-50 hover:bg-green-50 rounded-lg transition">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium text-gray-700 group-hover:text-green-700">Next: Strings</span>
+                                    <i class="fas fa-arrow-right text-gray-400 group-hover:text-green-600 group-hover:translate-x-1 transition-all"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/datatypes" class="block">
+                            <div class="p-3 bg-gray-50 hover:bg-blue-50 rounded-lg transition">
+                                <span class="text-sm font-medium text-gray-700 hover:text-blue-700">Back to Data Types</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Math Functions -->
+                    <div class="mt-8">
+                        <h4 class="text-md font-semibold text-gray-900 mb-3">🧮 Math Functions</h4>
+                        <div class="space-y-1 text-sm text-gray-600">
+                            <p><code class="bg-gray-100 px-1 rounded">round(x, n)</code> - Round to n places</p>
+                            <p><code class="bg-gray-100 px-1 rounded">abs(x)</code> - Absolute value</p>
+                            <p><code class="bg-gray-100 px-1 rounded">pow(x, y)</code> - x to power y</p>
+                            <p><code class="bg-gray-100 px-1 rounded">max(x, y)</code> - Maximum value</p>
+                        </div>
+                    </div>
+
+                    <!-- Tips -->
+                    <div class="mt-8">
+                        <h4 class="text-md font-semibold text-gray-900 mb-3">💡 Tips</h4>
+                        <div class="space-y-1 text-sm text-gray-600">
+                            <p>• Use underscores in large numbers: 1_000_000</p>
+                            <p>• Division (/) always returns float</p>
+                            <p>• Use // for integer division</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Python Learning Hub. Built with Flask & Tailwind CSS.</p>
+        </div>
+    </footer>
+</body>
+</html>

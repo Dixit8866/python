@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Variables Problems - Python Learning Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/static/css/tailwind.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-green-50 to-emerald-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-code text-2xl text-indigo-600 mr-2"></i>
+                    <span class="font-bold text-xl text-gray-900">Python Learning Hub</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="/" class="text-gray-700 hover:bg-gray-100 hover:text-indigo-700 px-3 py-2 rounded-md text-sm font-medium transition">Home</a>
+                        <a href="/python-intro" class="text-gray-700 hover:bg-gray-100 hover:text-indigo-700 px-3 py-2 rounded-md text-sm font-medium transition">About Python</a>
+                        <a href="/variables" class="bg-indigo-100 text-indigo-700 px-3 py-2 rounded-md text-sm font-medium">Variables</a>
+                        <a href="/datatypes" class="text-gray-700 hover:bg-gray-100 hover:text-indigo-700 px-3 py-2 rounded-md text-sm font-medium transition">Data Types</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="flex items-center space-x-2">
+                    <li><a href="/" class="text-gray-500 hover:text-indigo-700">Home</a></li>
+                    <li><i class="fas fa-chevron-right text-gray-400"></i></li>
+                    <li><a href="/variables" class="text-gray-500 hover:text-indigo-700">Variables</a></li>
+                    <li><i class="fas fa-chevron-right text-gray-400"></i></li>
+                    <li><span class="text-indigo-600 font-medium">Easy Problems</span></li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-green-500 to-emerald-500 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex items-center">
+                <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-seedling text-2xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-3xl font-bold">🟢 Easy Variables Problems</h1>
+                    <p class="text-green-100 mt-2">Perfect for beginners to practice basic variable concepts</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <!-- Main Content -->
+            <div class="lg:col-span-3 space-y-8">
+                
+                <!-- Problem 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-green-500 text-white p-4">
+                        <h2 class="text-xl font-bold">Problem 1: Personal Information</h2>
+                        <p class="text-green-100">Create variables to store personal information</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Task:</h3>
+                            <p class="text-gray-700 mb-4">
+                                Create variables to store your name, age, city, and favorite programming language. 
+                                Then print a formatted message introducing yourself.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-gray-900 rounded-lg p-4 mb-4">
+                            <h4 class="text-white font-medium mb-2">Solution:</h4>
+                            <pre class="text-green-400 text-sm"><code># Store personal information
+name = "John Doe"
+age = 25
+city = "New York"
+favorite_language = "Python"
+
+# Print introduction
+print(f"Hi! I'm {name}, {age} years old.")
+print(f"I live in {city} and I love {favorite_language}!")
+
+# Alternative formatting
+introduction = f"My name is {name}. I am {age} years old, live in {city}, and my favorite programming language is {favorite_language}."
+print(introduction)</code></pre>
+                        </div>
+                        
+                        <div class="bg-green-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-green-900 mb-2">Expected Output:</h4>
+                            <div class="font-mono text-sm text-green-800">
+                                Hi! I'm John Doe, 25 years old.<br>
+                                I live in New York and I love Python!<br>
+                                My name is John Doe. I am 25 years old, live in New York, and my favorite programming language is Python.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Problem 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-green-500 text-white p-4">
+                        <h2 class="text-xl font-bold">Problem 2: Simple Calculator</h2>
+                        <p class="text-green-100">Practice basic arithmetic with variables</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Task:</h3>
+                            <p class="text-gray-700 mb-4">
+                                Create two number variables and perform all basic arithmetic operations (addition, subtraction, multiplication, division).
+                            </p>
+                        </div>
+                        
+                        <div class="bg-gray-900 rounded-lg p-4 mb-4">
+                            <h4 class="text-white font-medium mb-2">Solution:</h4>
+                            <pre class="text-green-400 text-sm"><code># Define two numbers
+num1 = 15
+num2 = 4
+
+# Perform arithmetic operations
+addition = num1 + num2
+subtraction = num1 - num2
+multiplication = num1 * num2
+division = num1 / num2
+floor_division = num1 // num2
+modulus = num1 % num2
+power = num1 ** num2
+
+# Display results
+print(f"Number 1: {num1}")
+print(f"Number 2: {num2}")
+print(f"Addition: {num1} + {num2} = {addition}")
+print(f"Subtraction: {num1} - {num2} = {subtraction}")
+print(f"Multiplication: {num1} * {num2} = {multiplication}")
+print(f"Division: {num1} / {num2} = {division}")
+print(f"Floor Division: {num1} // {num2} = {floor_division}")
+print(f"Modulus: {num1} % {num2} = {modulus}")
+print(f"Power: {num1} ** {num2} = {power}")</code></pre>
+                        </div>
+                        
+                        <div class="bg-green-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-green-900 mb-2">Expected Output:</h4>
+                            <div class="font-mono text-sm text-green-800">
+                                Number 1: 15<br>
+                                Number 2: 4<br>
+                                Addition: 15 + 4 = 19<br>
+                                Subtraction: 15 - 4 = 11<br>
+                                Multiplication: 15 * 4 = 60<br>
+                                Division: 15 / 4 = 3.75<br>
+                                Floor Division: 15 // 4 = 3<br>
+                                Modulus: 15 % 4 = 3<br>
+                                Power: 15 ** 4 = 50625
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Problem 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-green-500 text-white p-4">
+                        <h2 class="text-xl font-bold">Problem 3: Variable Swapping</h2>
+                        <p class="text-green-100">Learn different ways to swap variable values</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Task:</h3>
+                            <p class="text-gray-700 mb-4">
+                                Create two variables with different values and swap them using different methods.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-gray-900 rounded-lg p-4 mb-4">
+                            <h4 class="text-white font-medium mb-2">Solution:</h4>
+                            <pre class="text-green-400 text-sm"><code># Method 1: Using a temporary variable
+a = 10
+b = 20
+print(f"Before swap: a = {a}, b = {b}")
+
+temp = a
+a = b
+b = temp
+print(f"After swap (temp): a = {a}, b = {b}")
+
+# Method 2: Python tuple unpacking (most Pythonic)
+x = 100
+y = 200
+print(f"Before swap: x = {x}, y = {y}")
+
+x, y = y, x
+print(f"After swap (tuple): x = {x}, y = {y}")
+
+# Method 3: Using arithmetic (only for numbers)
+p = 5
+q = 15
+print(f"Before swap: p = {p}, q = {q}")
+
+p = p + q  # p = 5 + 15 = 20
+q = p - q  # q = 20 - 15 = 5
+p = p - q  # p = 20 - 5 = 15
+print(f"After swap (arithmetic): p = {p}, q = {q}")</code></pre>
+                        </div>
+                        
+                        <div class="bg-green-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-green-900 mb-2">Expected Output:</h4>
+                            <div class="font-mono text-sm text-green-800">
+                                Before swap: a = 10, b = 20<br>
+                                After swap (temp): a = 20, b = 10<br>
+                                Before swap: x = 100, y = 200<br>
+                                After swap (tuple): x = 200, y = 100<br>
+                                Before swap: p = 5, q = 15<br>
+                                After swap (arithmetic): p = 15, q = 5
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Problem 4 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-green-500 text-white p-4">
+                        <h2 class="text-xl font-bold">Problem 4: String Manipulation</h2>
+                        <p class="text-green-100">Practice working with string variables</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Task:</h3>
+                            <p class="text-gray-700 mb-4">
+                                Create string variables for first name and last name. Combine them and display in different formats.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-gray-900 rounded-lg p-4 mb-4">
+                            <h4 class="text-white font-medium mb-2">Solution:</h4>
+                            <pre class="text-green-400 text-sm"><code># String variables
+first_name = "Alice"
+last_name = "Johnson"
+
+# Combine names in different ways
+full_name = first_name + " " + last_name
+formal_name = last_name + ", " + first_name
+initials = first_name[0] + "." + last_name[0] + "."
+
+# Display information
+print(f"First Name: {first_name}")
+print(f"Last Name: {last_name}")
+print(f"Full Name: {full_name}")
+print(f"Formal Name: {formal_name}")
+print(f"Initials: {initials}")
+
+# String operations
+print(f"Full name length: {len(full_name)} characters")
+print(f"Uppercase: {full_name.upper()}")
+print(f"Lowercase: {full_name.lower()}")
+print(f"Title case: {full_name.title()}")
+
+# Check if name contains certain letters
+contains_a = "a" in full_name.lower()
+print(f"Contains letter 'a': {contains_a}")</code></pre>
+                        </div>
+                        
+                        <div class="bg-green-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-green-900 mb-2">Expected Output:</h4>
+                            <div class="font-mono text-sm text-green-800">
+                                First Name: Alice<br>
+                                Last Name: Johnson<br>
+                                Full Name: Alice Johnson<br>
+                                Formal Name: Johnson, Alice<br>
+                                Initials: A.J.<br>
+                                Full name length: 13 characters<br>
+                                Uppercase: ALICE JOHNSON<br>
+                                Lowercase: alice johnson<br>
+                                Title case: Alice Johnson<br>
+                                Contains letter 'a': False
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-xl shadow-lg p-6 sticky top-24">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Practice Navigation</h3>
+                    
+                    <div class="space-y-3 mb-6">
+                        <div class="bg-green-100 text-green-800 px-3 py-2 rounded-lg font-medium">
+                            🟢 Easy (Current)
+                        </div>
+                        <a href="/variables/medium" class="block text-yellow-700 hover:bg-yellow-50 px-3 py-2 rounded-lg transition">
+                            🟡 Medium Problems
+                        </a>
+                        <a href="/variables/hard" class="block text-red-700 hover:bg-red-50 px-3 py-2 rounded-lg transition">
+                            🔴 Hard Problems
+                        </a>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-gray-900 mb-2">💡 Tips for Success</h4>
+                        <ul class="space-y-1 text-sm text-gray-600">
+                            <li>• Use descriptive variable names</li>
+                            <li>• Practice typing code yourself</li>
+                            <li>• Try modifying the examples</li>
+                            <li>• Test with different values</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-2">📚 What You'll Learn</h4>
+                        <ul class="space-y-1 text-sm text-gray-600">
+                            <li>• Variable assignment</li>
+                            <li>• Basic data types</li>
+                            <li>• String manipulation</li>
+                            <li>• Arithmetic operations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Python Learning Hub. Built with Flask & Tailwind CSS.</p>
+        </div>
+    </footer>
+</body>
+</html>

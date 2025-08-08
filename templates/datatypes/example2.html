@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Operations - Python Learning Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/static/css/tailwind.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-green-50 to-emerald-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-code text-2xl text-indigo-600 mr-2"></i>
+                    <span class="font-bold text-xl text-gray-900">Python Learning Hub</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="/" class="text-gray-700 hover:bg-gray-100 hover:text-indigo-700 px-3 py-2 rounded-md text-sm font-medium transition">Home</a>
+                        <a href="/variables" class="text-gray-700 hover:bg-gray-100 hover:text-indigo-700 px-3 py-2 rounded-md text-sm font-medium transition">Variables</a>
+                        <a href="/datatypes" class="bg-indigo-100 text-indigo-700 px-3 py-2 rounded-md text-sm font-medium">Data Types</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="flex items-center space-x-2">
+                    <li><a href="/" class="text-gray-500 hover:text-indigo-700">Home</a></li>
+                    <li><i class="fas fa-chevron-right text-gray-400"></i></li>
+                    <li><a href="/datatypes" class="text-gray-500 hover:text-indigo-700">Data Types</a></li>
+                    <li><i class="fas fa-chevron-right text-gray-400"></i></li>
+                    <li><span class="text-indigo-600 font-medium">String Operations</span></li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Main Content -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <!-- Header -->
+                    <div class="bg-gradient-to-r from-green-500 to-emerald-500 text-white p-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-quote-right text-xl"></i>
+                            </div>
+                            <div>
+                                <h1 class="text-2xl font-bold">Example 2: String Operations</h1>
+                                <p class="text-green-100">Working with text data and string manipulation</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="p-8">
+                        <div class="mb-8">
+                            <h2 class="text-xl font-semibold text-gray-900 mb-4">Understanding Strings</h2>
+                            <p class="text-gray-700 mb-4">
+                                Strings are sequences of characters used to represent text. In Python, strings are immutable, 
+                                meaning they cannot be changed after creation. However, you can create new strings based on existing ones.
+                            </p>
+                        </div>
+
+                        <!-- Code Example -->
+                        <div class="mb-8">
+                            <div class="bg-gray-900 rounded-lg p-6 mb-4">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h3 class="text-white font-medium">Python Code</h3>
+                                    <button class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-sm transition">
+                                        <i class="fas fa-copy mr-1"></i> Copy
+                                    </button>
+                                </div>
+                                <pre class="text-green-400"><code class="language-python"># Creating strings
+name = "Python"
+language = 'Programming'
+message = """This is a
+multi-line string"""
+
+# String information
+print(f"Name: {name}")
+print(f"Type: {type(name)}")
+print(f"Length: {len(name)}")
+
+# String operations
+greeting = "Hello, " + name + "!"
+repeated = name * 3
+uppercase = name.upper()
+lowercase = name.lower()
+
+print(f"Greeting: {greeting}")
+print(f"Repeated: {repeated}")
+print(f"Uppercase: {uppercase}")
+print(f"Lowercase: {lowercase}")
+
+# String methods
+sentence = "  Python is awesome!  "
+cleaned = sentence.strip()
+words = cleaned.split()
+replaced = cleaned.replace("awesome", "amazing")
+
+print(f"Original: '{sentence}'")
+print(f"Cleaned: '{cleaned}'")
+print(f"Words: {words}")
+print(f"Replaced: '{replaced}'")
+
+# String formatting
+age = 30
+formatted = f"I am {age} years old and I love {name}!"
+print(formatted)
+
+# Checking string content
+print(f"Starts with 'Py': {name.startswith('Py')}")
+print(f"Contains 'th': {'th' in name}")
+print(f"Is alphabetic: {name.isalpha()}")</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- Output -->
+                        <div class="mb-8">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-3">Expected Output:</h3>
+                            <div class="bg-gray-100 rounded-lg p-4 font-mono text-sm space-y-1">
+                                <div class="text-gray-700">Name: Python</div>
+                                <div class="text-gray-700">Type: &lt;class 'str'&gt;</div>
+                                <div class="text-gray-700">Length: 6</div>
+                                <div class="text-gray-700">Greeting: Hello, Python!</div>
+                                <div class="text-gray-700">Repeated: PythonPythonPython</div>
+                                <div class="text-gray-700">Uppercase: PYTHON</div>
+                                <div class="text-gray-700">Lowercase: python</div>
+                                <div class="text-gray-700">Original: '  Python is awesome!  '</div>
+                                <div class="text-gray-700">Cleaned: 'Python is awesome!'</div>
+                                <div class="text-gray-700">Words: ['Python', 'is', 'awesome!']</div>
+                                <div class="text-gray-700">Replaced: 'Python is amazing!'</div>
+                                <div class="text-gray-700">I am 30 years old and I love Python!</div>
+                                <div class="text-gray-700">Starts with 'Py': True</div>
+                                <div class="text-gray-700">Contains 'th': True</div>
+                                <div class="text-gray-700">Is alphabetic: True</div>
+                            </div>
+                        </div>
+
+                        <!-- String Methods -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                            <div class="bg-green-50 rounded-lg p-6">
+                                <h4 class="font-semibold text-green-900 mb-3">
+                                    <i class="fas fa-tools mr-2"></i>Common Methods
+                                </h4>
+                                <div class="space-y-2 text-green-800 text-sm">
+                                    <p><code class="bg-green-200 px-2 py-1 rounded">upper()</code> - Uppercase</p>
+                                    <p><code class="bg-green-200 px-2 py-1 rounded">lower()</code> - Lowercase</p>
+                                    <p><code class="bg-green-200 px-2 py-1 rounded">strip()</code> - Remove whitespace</p>
+                                    <p><code class="bg-green-200 px-2 py-1 rounded">split()</code> - Split into list</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-emerald-50 rounded-lg p-6">
+                                <h4 class="font-semibold text-emerald-900 mb-3">
+                                    <i class="fas fa-search mr-2"></i>Testing Methods
+                                </h4>
+                                <div class="space-y-2 text-emerald-800 text-sm">
+                                    <p><code class="bg-emerald-200 px-2 py-1 rounded">startswith()</code> - Starts with</p>
+                                    <p><code class="bg-emerald-200 px-2 py-1 rounded">endswith()</code> - Ends with</p>
+                                    <p><code class="bg-emerald-200 px-2 py-1 rounded">isalpha()</code> - All letters</p>
+                                    <p><code class="bg-emerald-200 px-2 py-1 rounded">isdigit()</code> - All digits</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Explanation -->
+                        <div class="bg-green-50 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-green-900 mb-3">
+                                <i class="fas fa-lightbulb mr-2"></i>Key Points
+                            </h3>
+                            <ul class="space-y-2 text-green-800">
+                                <li><strong>Immutable:</strong> Strings cannot be changed, only replaced</li>
+                                <li><strong>Quotes:</strong> Use single ('') or double ("") quotes</li>
+                                <li><strong>Concatenation:</strong> Use + to join strings or f-strings for formatting</li>
+                                <li><strong>Indexing:</strong> Access characters with [index], starting from 0</li>
+                                <li><strong>Methods:</strong> Strings have many built-in methods for manipulation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-xl shadow-lg p-6 sticky top-24">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Navigation</h3>
+                    <div class="space-y-3">
+                        <a href="/datatypes/example1" class="block">
+                            <div class="p-3 bg-gray-50 hover:bg-blue-50 rounded-lg transition">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium text-gray-700 hover:text-blue-700">Previous: Numeric Types</span>
+                                    <i class="fas fa-arrow-left text-gray-400 hover:text-blue-600"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/datatypes" class="block">
+                            <div class="p-3 bg-gray-50 hover:bg-green-50 rounded-lg transition">
+                                <span class="text-sm font-medium text-gray-700 hover:text-green-700">Back to Data Types</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- String Formatting -->
+                    <div class="mt-8">
+                        <h4 class="text-md font-semibold text-gray-900 mb-3">📝 Formatting</h4>
+                        <div class="space-y-1 text-sm text-gray-600">
+                            <p><code class="bg-gray-100 px-1 rounded">f"Hello {name}"</code> - f-strings</p>
+                            <p><code class="bg-gray-100 px-1 rounded">"Hello {}".format(name)</code> - format()</p>
+                            <p><code class="bg-gray-100 px-1 rounded">"Hello %s" % name</code> - % formatting</p>
+                        </div>
+                    </div>
+
+                    <!-- Tips -->
+                    <div class="mt-8">
+                        <h4 class="text-md font-semibold text-gray-900 mb-3">💡 Tips</h4>
+                        <div class="space-y-1 text-sm text-gray-600">
+                            <p>• Use f-strings for modern formatting</p>
+                            <p>• Triple quotes for multi-line strings</p>
+                            <p>• Escape characters with backslash \</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Python Learning Hub. Built with Flask & Tailwind CSS.</p>
+        </div>
+    </footer>
+</body>
+</html>

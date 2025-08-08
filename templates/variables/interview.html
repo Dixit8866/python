@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables Interview Questions - Python Learning Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/static/css/tailwind.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-indigo-50 to-purple-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-code text-2xl text-indigo-600 mr-2"></i>
+                    <span class="font-bold text-xl text-gray-900">Python Learning Hub</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="/" class="text-gray-700 hover:bg-gray-100 hover:text-indigo-700 px-3 py-2 rounded-md text-sm font-medium transition">Home</a>
+                        <a href="/python-intro" class="text-gray-700 hover:bg-gray-100 hover:text-indigo-700 px-3 py-2 rounded-md text-sm font-medium transition">About Python</a>
+                        <a href="/variables" class="bg-indigo-100 text-indigo-700 px-3 py-2 rounded-md text-sm font-medium">Variables</a>
+                        <a href="/datatypes" class="text-gray-700 hover:bg-gray-100 hover:text-indigo-700 px-3 py-2 rounded-md text-sm font-medium transition">Data Types</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex items-center">
+                <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-user-tie text-2xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-3xl font-bold">💼 Variables Interview Questions</h1>
+                    <p class="text-indigo-100 mt-2">Prepare for Python technical interviews with confidence</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <!-- Main Content -->
+            <div class="lg:col-span-3 space-y-8">
+                
+                <!-- Theoretical Questions -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-indigo-600 text-white p-4">
+                        <h2 class="text-xl font-bold">📚 Theoretical Questions</h2>
+                        <p class="text-indigo-100">Core concepts you should know</p>
+                    </div>
+                    <div class="p-6 space-y-6">
+                        
+                        <!-- Question 1 -->
+                        <div class="border-l-4 border-blue-400 pl-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Q1: What is the difference between global and local variables in Python?</h3>
+                            <div class="bg-blue-50 rounded-lg p-4">
+                                <p class="text-blue-900 mb-3"><strong>Answer:</strong></p>
+                                <ul class="space-y-2 text-blue-800 text-sm">
+                                    <li>• <strong>Global variables:</strong> Defined outside functions, accessible throughout the program</li>
+                                    <li>• <strong>Local variables:</strong> Defined inside functions, only accessible within that function</li>
+                                    <li>• Use <code class="bg-blue-200 px-1 rounded">global</code> keyword to modify global variables inside functions</li>
+                                    <li>• Local variables shadow global variables with the same name</li>
+                                </ul>
+                                <div class="mt-3 bg-blue-100 p-3 rounded">
+                                    <pre class="text-sm"><code>x = 10  # Global variable
+
+def function():
+    global x
+    x = 20  # Modifies global x
+    y = 30  # Local variable</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 2 -->
+                        <div class="border-l-4 border-green-400 pl-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Q2: Explain Python's variable naming conventions and rules.</h3>
+                            <div class="bg-green-50 rounded-lg p-4">
+                                <p class="text-green-900 mb-3"><strong>Answer:</strong></p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <h4 class="font-semibold text-green-800 mb-2">Rules (Must follow):</h4>
+                                        <ul class="space-y-1 text-green-700 text-sm">
+                                            <li>• Start with letter or underscore</li>
+                                            <li>• Contain only letters, digits, underscores</li>
+                                            <li>• Case-sensitive</li>
+                                            <li>• Cannot be reserved keywords</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-green-800 mb-2">Conventions (PEP 8):</h4>
+                                        <ul class="space-y-1 text-green-700 text-sm">
+                                            <li>• <code>snake_case</code> for variables/functions</li>
+                                            <li>• <code>UPPER_CASE</code> for constants</li>
+                                            <li>• <code>_private</code> for internal use</li>
+                                            <li>• <code>__special__</code> for magic methods</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 3 -->
+                        <div class="border-l-4 border-purple-400 pl-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Q3: What happens when you assign one variable to another in Python?</h3>
+                            <div class="bg-purple-50 rounded-lg p-4">
+                                <p class="text-purple-900 mb-3"><strong>Answer:</strong></p>
+                                <p class="text-purple-800 mb-3">It depends on whether the object is mutable or immutable:</p>
+                                <div class="space-y-3">
+                                    <div class="bg-purple-100 p-3 rounded">
+                                        <h5 class="font-semibold text-purple-900">Immutable Objects (int, str, tuple):</h5>
+                                        <p class="text-purple-800 text-sm">Creates a reference to the same object initially, but any modification creates a new object</p>
+                                    </div>
+                                    <div class="bg-purple-100 p-3 rounded">
+                                        <h5 class="font-semibold text-purple-900">Mutable Objects (list, dict, set):</h5>
+                                        <p class="text-purple-800 text-sm">Creates a reference to the same object; modifications affect both variables</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Practical Coding Questions -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-purple-600 text-white p-4">
+                        <h2 class="text-xl font-bold">💻 Practical Coding Questions</h2>
+                        <p class="text-purple-100">Write code to solve these problems</p>
+                    </div>
+                    <div class="p-6 space-y-8">
+                        
+                        <!-- Coding Question 1 -->
+                        <div class="border border-gray-200 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-3">Coding Q1: Variable Swapping Challenge</h3>
+                            <p class="text-gray-700 mb-4">
+                                <strong>Problem:</strong> Given two variables a=10 and b=20, swap their values using at least 3 different methods. 
+                                Explain the pros and cons of each method.
+                            </p>
+                            
+                            <div class="bg-gray-900 rounded-lg p-4 mb-4">
+                                <h4 class="text-white font-medium mb-2">Solution:</h4>
+                                <pre class="text-green-400 text-sm"><code># Method 1: Using temporary variable (Universal)
+a, b = 10, 20
+print(f"Before: a={a}, b={b}")
+temp = a
+a = b
+b = temp
+print(f"Method 1: a={a}, b={b}")
+
+# Method 2: Tuple unpacking (Pythonic)
+a, b = 10, 20
+a, b = b, a
+print(f"Method 2: a={a}, b={b}")
+
+# Method 3: Arithmetic operations (Numbers only)
+a, b = 10, 20
+a = a + b  # a = 30
+b = a - b  # b = 10
+a = a - b  # a = 20
+print(f"Method 3: a={a}, b={b}")
+
+# Method 4: XOR operations (Integers only)
+a, b = 10, 20
+a = a ^ b
+b = a ^ b
+a = a ^ b
+print(f"Method 4: a={a}, b={b}")
+
+# Method 5: Using list (Creative but inefficient)
+a, b = 10, 20
+swap_list = [a, b]
+a, b = swap_list[1], swap_list[0]
+print(f"Method 5: a={a}, b={b}")</code></pre>
+                            </div>
+                            
+                            <div class="bg-yellow-50 rounded-lg p-4">
+                                <h5 class="font-semibold text-yellow-900 mb-2">Comparison:</h5>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                                    <div>
+                                        <p class="text-yellow-800"><strong>Best:</strong> Tuple unpacking - clean, readable, Pythonic</p>
+                                        <p class="text-yellow-800"><strong>Universal:</strong> Temporary variable - works with any data type</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-yellow-800"><strong>Risky:</strong> Arithmetic - can cause overflow</p>
+                                        <p class="text-yellow-800"><strong>Limited:</strong> XOR - integers only</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Coding Question 2 -->
+                        <div class="border border-gray-200 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-3">Coding Q2: Reference vs Copy Problem</h3>
+                            <p class="text-gray-700 mb-4">
+                                <strong>Problem:</strong> Predict the output of this code and explain why:
+                            </p>
+                            
+                            <div class="bg-gray-100 rounded-lg p-4 mb-4">
+                                <pre class="text-gray-800 text-sm"><code>list1 = [1, 2, [3, 4]]
+list2 = list1
+list3 = list1.copy()
+list4 = list1[:]
+import copy
+list5 = copy.deepcopy(list1)
+
+list1[0] = 'X'
+list1[2].append(5)
+
+print("list1:", list1)
+print("list2:", list2)
+print("list3:", list3)
+print("list4:", list4)
+print("list5:", list5)</code></pre>
+                            </div>
+                            
+                            <div class="bg-green-50 rounded-lg p-4">
+                                <h5 class="font-semibold text-green-900 mb-2">Answer & Explanation:</h5>
+                                <div class="space-y-2 text-green-800 text-sm">
+                                    <p><strong>list1:</strong> ['X', 2, [3, 4, 5]] - Original, modified</p>
+                                    <p><strong>list2:</strong> ['X', 2, [3, 4, 5]] - Reference to list1, same object</p>
+                                    <p><strong>list3:</strong> [1, 2, [3, 4, 5]] - Shallow copy, nested list is shared</p>
+                                    <p><strong>list4:</strong> [1, 2, [3, 4, 5]] - Slice copy, same as shallow copy</p>
+                                    <p><strong>list5:</strong> [1, 2, [3, 4]] - Deep copy, completely independent</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Coding Question 3 -->
+                        <div class="border border-gray-200 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-3">Coding Q3: Variable Scope Tricky Question</h3>
+                            <p class="text-gray-700 mb-4">
+                                <strong>Problem:</strong> What will this code print and why?
+                            </p>
+                            
+                            <div class="bg-gray-100 rounded-lg p-4 mb-4">
+                                <pre class="text-gray-800 text-sm"><code>x = 10
+
+def func1():
+    print(f"func1: {x}")
+
+def func2():
+    x = 20
+    print(f"func2: {x}")
+
+def func3():
+    print(f"func3 before: {x}")
+    x = 30
+    print(f"func3 after: {x}")
+
+func1()
+func2()
+try:
+    func3()
+except Exception as e:
+    print(f"Error: {e}")</code></pre>
+                            </div>
+                            
+                            <div class="bg-red-50 rounded-lg p-4">
+                                <h5 class="font-semibold text-red-900 mb-2">Answer:</h5>
+                                <div class="space-y-2 text-red-800 text-sm">
+                                    <p><strong>func1:</strong> 10 - Accesses global x</p>
+                                    <p><strong>func2:</strong> 20 - Creates local x, shadows global</p>
+                                    <p><strong>func3:</strong> UnboundLocalError - Python sees assignment to x, treats it as local, but tries to print before assignment</p>
+                                    <p><strong>Fix:</strong> Add <code class="bg-red-200 px-1 rounded">global x</code> at the beginning of func3</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Advanced Interview Questions -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-red-600 text-white p-4">
+                        <h2 class="text-xl font-bold">🔥 Advanced Questions</h2>
+                        <p class="text-red-100">For senior developer positions</p>
+                    </div>
+                    <div class="p-6 space-y-6">
+                        
+                        <!-- Advanced Question 1 -->
+                        <div class="border-l-4 border-red-400 pl-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Q: How does Python's garbage collection affect variable lifecycle?</h3>
+                            <div class="bg-red-50 rounded-lg p-4">
+                                <p class="text-red-900 mb-3"><strong>Answer:</strong></p>
+                                <ul class="space-y-2 text-red-800 text-sm">
+                                    <li>• Python uses reference counting + cyclic garbage collection</li>
+                                    <li>• Variables are cleaned when reference count reaches zero</li>
+                                    <li>• Circular references need cyclic GC to be collected</li>
+                                    <li>• <code class="bg-red-200 px-1 rounded">weakref</code> module provides weak references</li>
+                                    <li>• <code class="bg-red-200 px-1 rounded">gc</code> module allows manual control</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Advanced Question 2 -->
+                        <div class="border-l-4 border-orange-400 pl-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Q: Implement a variable that automatically logs all access and modifications.</h3>
+                            <div class="bg-orange-50 rounded-lg p-4">
+                                <div class="bg-gray-900 rounded p-3 mb-3">
+                                    <pre class="text-green-400 text-sm"><code>class LoggedVariable:
+    def __init__(self, value, name="variable"):
+        self._value = value
+        self._name = name
+        self._access_log = []
+    
+    def __get__(self, instance, owner):
+        self._access_log.append(f"READ: {self._value}")
+        return self._value
+    
+    def __set__(self, instance, value):
+        old_value = self._value
+        self._value = value
+        self._access_log.append(f"WRITE: {old_value} -> {value}")
+    
+    def get_log(self):
+        return self._access_log.copy()</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-xl shadow-lg p-6 sticky top-24">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Interview Prep Guide</h3>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-indigo-700 mb-2">📋 Key Topics to Master</h4>
+                        <ul class="space-y-1 text-sm text-gray-600">
+                            <li>• Variable scope (global/local)</li>
+                            <li>• Reference vs. value semantics</li>
+                            <li>• Mutable vs. immutable objects</li>
+                            <li>• Memory management</li>
+                            <li>• Variable lifecycle</li>
+                            <li>• Naming conventions (PEP 8)</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-purple-700 mb-2">💡 Interview Tips</h4>
+                        <ul class="space-y-1 text-sm text-gray-600">
+                            <li>• Practice explaining concepts clearly</li>
+                            <li>• Draw diagrams for memory concepts</li>
+                            <li>• Know when to use different approaches</li>
+                            <li>• Understand performance implications</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-indigo-50 rounded-lg p-4">
+                        <h4 class="font-semibold text-indigo-900 mb-2">🎯 Practice Strategy</h4>
+                        <ol class="space-y-1 text-sm text-indigo-800">
+                            <li>1. Master basic concepts first</li>
+                            <li>2. Practice coding problems daily</li>
+                            <li>3. Explain code out loud</li>
+                            <li>4. Review advanced topics</li>
+                            <li>5. Mock interview practice</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Python Learning Hub. Built with Flask & Tailwind CSS.</p>
+        </div>
+    </footer>
+</body>
+</html>
